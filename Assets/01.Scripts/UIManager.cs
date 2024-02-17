@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 using TMPro;
 
 public class UIManager : MonoBehaviour
-{
-	private AudioSource audioSource;
+{ 
+	[SerializeField] private AudioSource audioSource;
 
 	[SerializeField] private GameObject EscPanel;
 	[SerializeField] private GameObject ExplainPanel;
