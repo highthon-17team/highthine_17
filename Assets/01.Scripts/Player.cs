@@ -7,10 +7,19 @@ public class Player : MonoBehaviour
 	Vector3 dir;
 	float moveSpeed = 5f;
 	[SerializeField]private bool Light_On = false;
+	public GameObject otherObject;
 
     private void Update()
     {
 		Move();
+		if(Light_On == true)
+		{
+			if(Input.GetKeyDown(KeyCode.F))
+			{
+				otherObject.SetActive(false);
+			}
+		}
+
     }
 
     private void Move()
@@ -28,10 +37,7 @@ public class Player : MonoBehaviour
 		if(other.gameObject.CompareTag("Light"))
 		{
 			Light_On = true;
-			if(Input.GetKeyDown(KeyCode.F))
-			{
-				//불끄는 코드 작성
-			}
+			otherObject = other.gameObject;
 		}
 	}
 	void OnTriggerExit2D(Collider2D other)
