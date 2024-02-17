@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField]float moveSpeed = 5f;
     [SerializeField] private bool Light_On = false;
     public GameObject lightObject; // Light2D를 가진 게임 오브젝트 변수 추가
+	public GameObject FairyLight;
 
     private void Awake()
     {
@@ -50,9 +51,10 @@ public class Player : MonoBehaviour
         UnityEngine.Rendering.Universal.Light2D light2D = obj.GetComponent<UnityEngine.Rendering.Universal.Light2D>(); // 게임 오브젝트로부터 Light2D 컴포넌트를 가져옴
         if (light2D != null)
         {
+			LightMinus();
             float duration = 1f; // 1초 동안 서서히 감소
             float startIntensity = light2D.intensity;
-            float targetIntensity = 0f;
+            float targetIntensity = 0.9f;
 
             float elapsedTime = 0f;
             while (elapsedTime < duration)
@@ -67,6 +69,11 @@ public class Player : MonoBehaviour
             Debug.LogError("Light2D 컴포넌트를 찾을 수 없습니다.");
         }
     }
+	void LightMinus()
+	{
+		UnityEngine.Rendering.Universal.Light2D Fairy_Light2D = FairyLight.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
+		Fairy_Light2D.intensity -= 0.3f;
+	}
 
     void OnTriggerEnter2D(Collider2D other)
     {
