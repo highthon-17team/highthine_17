@@ -27,6 +27,11 @@ public class UIManager : MonoBehaviour
 	public void Esc()
 	{
 		EscPanel.SetActive(!EscPanel.activeSelf);
+
+		if (EscPanel.activeSelf == true)
+			Time.timeScale = 0;
+		if (EscPanel.activeSelf == false)
+			Time.timeScale = 1;
 	}
 
 	public void SceneChange(int num)
