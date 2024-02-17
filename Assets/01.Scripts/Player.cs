@@ -23,18 +23,18 @@ public class Player : MonoBehaviour
 
 		transform.position = pos;
 	}
-	void OnTriggerStay(Collider other)
+	void OnTriggerEnter2D(Collider2D other)
 	{
 		if(other.gameObject.CompareTag("Light"))
 		{
 			Light_On = true;
 			if(Input.GetKeyDown(KeyCode.F))
 			{
-
+				//불끄는 코드 작성
 			}
 		}
 	}
-	void OnTriggerExit(Collider other)
+	void OnTriggerExit2D(Collider2D other)
 	{
 		if(other.gameObject.CompareTag("Light"))
 		{
