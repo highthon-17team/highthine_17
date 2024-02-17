@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private bool Light_On = false;
     public GameObject lightObject; // Light2D를 가진 게임 오브젝트 변수 추가
 	public GameObject FairyLight;
+	public int Light_Num;
 
     private void Awake()
     {
@@ -51,6 +52,8 @@ public class Player : MonoBehaviour
         UnityEngine.Rendering.Universal.Light2D light2D = obj.GetComponent<UnityEngine.Rendering.Universal.Light2D>(); // 게임 오브젝트로부터 Light2D 컴포넌트를 가져옴
         if (light2D != null)
         {
+			if(light2D.intensity == 0.2f)
+			{
 			LightMinus();
             float duration = 1f; // 1초 동안 서서히 감소
             float startIntensity = light2D.intensity;
@@ -63,6 +66,9 @@ public class Player : MonoBehaviour
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
+			Light_Num++;
+			}
+			
         }
         else
         {
