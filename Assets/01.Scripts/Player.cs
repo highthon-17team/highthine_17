@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     private Animator _anim;
 
     Vector3 dir;
-    float moveSpeed = 5f;
+    [SerializeField]float moveSpeed = 5f;
     [SerializeField] private bool Light_On = false;
     public GameObject lightObject; // Light2D를 가진 게임 오브젝트 변수 추가
 
@@ -61,9 +61,6 @@ public class Player : MonoBehaviour
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
-
-            // 감소 완료 후에 GameObject 비활성화
-            obj.SetActive(false);
         }
         else
         {
