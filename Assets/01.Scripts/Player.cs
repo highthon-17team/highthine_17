@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
 	Vector3 dir;
 	float moveSpeed = 5f;
+	[SerializeField]private bool Light_On = false;
 
     private void Update()
     {
@@ -21,5 +22,23 @@ public class Player : MonoBehaviour
 		Vector3 pos = transform.position + (dir * moveSpeed * Time.deltaTime);
 
 		transform.position = pos;
+	}
+	void OnTriggerStay(Collider other)
+	{
+		if(other.gameObject.CompareTag("Light"))
+		{
+			Light_On = true;
+			if(Input.GetKeyDown(KeyCode.F))
+			{
+
+			}
+		}
+	}
+	void OnTriggerExit(Collider other)
+	{
+		if(other.gameObject.CompareTag("Light"))
+		{
+			Light_On = false;
+		}
 	}
 }
