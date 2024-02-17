@@ -3,10 +3,17 @@ using System.Collections;
 
 public class Player : MonoBehaviour
 {
+    private Animator _anim;
+
     Vector3 dir;
     float moveSpeed = 5f;
     [SerializeField] private bool Light_On = false;
     private GameObject lightObject; // Light2D를 가진 게임 오브젝트 변수 추가
+
+    private void Awake()
+    {
+        _anim = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -29,6 +36,10 @@ public class Player : MonoBehaviour
         Vector3 pos = transform.position + (dir * moveSpeed * Time.deltaTime);
 
         transform.position = pos;
+
+        _anim.SetFloat("DirX", x);
+        _anim.SetFloat("DirY", y);
+        _anim.SetBool("Walking", true);
     }
 
     IEnumerator FadeOutLight(GameObject obj)
