@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     Vector3 dir;
     float moveSpeed = 5f;
     [SerializeField] private bool Light_On = false;
-    private GameObject lightObject; // Light2D를 가진 게임 오브젝트 변수 추가
+    public GameObject lightObject; // Light2D를 가진 게임 오브젝트 변수 추가
 
     private void Awake()
     {
