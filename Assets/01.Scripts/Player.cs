@@ -40,6 +40,9 @@ public class Player : MonoBehaviour
         _anim.SetFloat("DirX", x);
         _anim.SetFloat("DirY", y);
         _anim.SetBool("Walking", true);
+        
+        if (x == 0 && y == 0)
+            _anim.SetBool("Walking", false);
     }
 
     IEnumerator FadeOutLight(GameObject obj)
