@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
 	private AudioSource audioSource;
 
 	[SerializeField] private GameObject EscPanel;
+	[SerializeField] private GameObject ExplainPanel;
 
 	private void Update()
 	{
@@ -37,6 +38,16 @@ public class UIManager : MonoBehaviour
 	public void SceneChange(int num)
 	{
 		SceneManager.LoadScene(num);
+	}
+
+	public void Expain()
+    {
+		ExplainPanel.SetActive(!ExplainPanel.activeSelf);
+	}
+	
+	public void OffExpain()
+    {
+		ExplainPanel.SetActive(false);
 	}
 
 	public void ExitGame()
