@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private GameObject EscPanel;
 	[SerializeField] private GameObject ExplainPanel;
 
+	[SerializeField] private Toggle muteToggle;
+
 	private void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
