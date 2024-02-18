@@ -242,3 +242,5 @@ MonoBehaviour:
   moveSpeed: 5
   Light_On: 0
   lightObject: {fileID: 0}
+  FairyLight: {fileID: 0}
+  Light_Num: 0

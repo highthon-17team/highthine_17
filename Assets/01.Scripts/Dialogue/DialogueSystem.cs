@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DialogueSystem : MonoBehaviour
 {
     public Text txtSentence;
+    public GameObject panel;
 
     Queue<string> sentences = new Queue<string> ();
 
@@ -33,6 +34,6 @@ public class DialogueSystem : MonoBehaviour
 
     private void End()
     {
-        Debug.Log("end");
+        panel.SetActive(false);
     }
 }
