@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI; // UI 관련 기능을 사용하기 위해 추가
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class Player : MonoBehaviour
     public int Light_Num;
 
     // 텍스트를 표시할 UI Text 객체
-    public Text lightCountText;
+    public TextMeshProUGUI lightCountText;
 
     private void Awake()
     {
